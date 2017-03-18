@@ -541,7 +541,7 @@ final class Mage
      */
     public static function helper($name)
     {
-        $registryKey = '_helper/' . $name;
+        $registryKey = '_helper/' . $name ;
         if (!self::registry($registryKey)) {
             $helperClass = self::getConfig()->getHelperClassName($name);
             self::register($registryKey, new $helperClass);
