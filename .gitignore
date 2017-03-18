@@ -4,3 +4,4 @@ var/cache/
 var/session/
 media/catalog/product/cache/
 media/catalog/swatches/1/15x15/media/purple.png
+wp/wp-includes/l10n.php
