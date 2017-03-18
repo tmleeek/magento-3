@@ -1,0 +1,33 @@
+/**
+ * @category	Fishpig
+ * @package Fishpig_Wordpress_Addon_VisualComposer
+ * @url http://fishpig.co.uk/magento/wordpress-integration/visual-composer/
+ * @author Ben Tideswell <ben@fishpig.co.uk>
+ */
+
+1.1.0.18
+- Added support for recurring events in The Events Calendar Pro. Requires Magento WordPress Integration 4.2.0.23
+
+1.1.0.16
+- Fixed cookie notice issue.
+
+1.1.0.9
+- Added support for The Events Calendar Pro.
+
+1.1.0.0
+- Upgraded to use new add-on integration system
+
+1.0.1.8
+- Added support for the Events List widget
+
+1.0.1.7
+- Added support for the 'Show Events in Main Loop' option.
+
+1.0.1.1
+- Added better SEO data retrieval such as page title and meta data.
+
+1.0.0.9
+- Fixed issue that broke post grid.
+
+1.0.0.8
+- Fixed issue that stopped custom design options such as custom backgrounds from displaying.

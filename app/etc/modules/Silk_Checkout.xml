@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Silk_Checkout>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Epicor_Comm />
+            </depends>
+        </Silk_Checkout>
+    </modules>
+</config>

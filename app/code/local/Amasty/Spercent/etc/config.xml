@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2016 Amasty (https://www.amasty.com)
+ * @package Amasty_Spercent
+ */
+-->
+<config>
+    <modules>
+        <Amasty_Spercent>
+            <version>1.1.4</version>
+        </Amasty_Spercent>
+    </modules>
+
+    <global>
+        <models>
+            <amspercent>
+                <class>Amasty_Spercent_Model</class>
+                <resourceModel>amspercent_mysql4</resourceModel>
+            </amspercent>
+            <amspercent_mysql4>
+                <class>Amasty_Spercent_Model_Mysql4</class>
+                <entities>
+                    <method>
+                        <table>am_spercent_method</table>
+                    </method> 
+                </entities>
+            </amspercent_mysql4>         
+        </models>     
+        <resources>
+            <amspercent_setup>
+                <setup>
+                    <module>Amasty_Spercent</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </amspercent_setup>
+            
+            <amspercent_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </amspercent_write>
+            
+            <amspercent_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </amspercent_read>
+        </resources>
+
+        <blocks>
+            <amspercent>
+                <class>Amasty_Spercent_Block</class>
+            </amspercent>
+        </blocks>
+        
+        <helpers>
+            <amspercent>
+                <class>Amasty_Spercent_Helper</class>
+            </amspercent>
+        </helpers>         
+    </global>
+    
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Amasty_Spercent after="Mage_Adminhtml">Amasty_Spercent_Adminhtml</Amasty_Spercent>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin> 
+    
+    <adminhtml>
+     <menu>
+        <sales>
+            <children>
+                <amspercent translate="title" module="amspercent">
+                    <title>Percent Shipping</title>
+                    <sort_order>600</sort_order>
+                    <children>
+                        <amspercent_rules translate="title" module="amspercent">
+                            <title>Manage Methods</title>
+                            <action>adminhtml/amspercent_method/</action>
+                        </amspercent_rules>
+                        <amspercent_rates translate="title" module="amspercent">
+                            <title>Settings</title>
+                            <action>adminhtml/system_config/edit/section/carriers</action>
+                        </amspercent_rates>
+                    </children>
+                </amspercent>
+            </children>
+        </sales>
+    </menu> 
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <carriers>
+                                            <children>
+                                                <amspercent>
+                                                    <title>Percent Shipping</title>
+                                                </amspercent>
+                                            </children>
+                                        </carriers>
+                                    </children>
+                                </config>
+                            </children>
+                        </system> 
+                     </children>
+                </admin> 
+			</resources>
+		</acl>
+        <translate>
+            <modules>
+                <Amasty_Spercent>
+                    <files>
+                        <default>Amasty_Spercent.csv</default>
+                    </files>
+                </Amasty_Spercent>
+            </modules>
+        </translate> 	
+    </adminhtml> 
+    
+    <default>
+        <carriers>
+            <amspercent>
+                <active>1</active>
+                <sallowspecific>0</sallowspecific>
+                <model>amspercent/carrier_percent</model>
+                <title>Percent Shipping</title>
+                <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+            </amspercent>
+        </carriers>
+    </default>
+</config>

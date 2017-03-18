@@ -1,3 +1,6 @@
 var/cache/mage--d/
 var/cache/mage--8/
 var/cache/
+var/session/
+media/catalog/product/cache/
+media/catalog/swatches/1/15x15/media/purple.png

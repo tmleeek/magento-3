@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2016 Amasty (https://www.amasty.com)
+ * @package Amasty_Spercent
+ */
+--> 
+<!--
+    Copyright (c) 2010 Amasty (http://www.amasty.com) 
+-->
+<config>
+    <menu>
+        <sales>
+            <children>
+                <amspercent translate="title" module="amspercent">
+                    <title>Percent Shipping</title>
+                    <sort_order>600</sort_order>
+                    <children>
+                        <amspercent_rules translate="title" module="amspercent">
+                            <title>Manage Methods</title>
+                            <action>amspercent/adminhtml_method</action>
+                        </amspercent_rules>
+                        <amspercent_rates translate="title" module="amspercent">
+                            <title>Settings</title>
+                            <action>adminhtml/system_config/edit/section/carriers</action>
+                        </amspercent_rates>
+                    </children>
+                </amspercent>
+            </children>
+        </sales>
+    </menu> 
+		<acl>
+			<resources>
+                <admin>
+                    <children>
+                        <sales>
+							<children>
+								<amspercent translate="title">
+									<title>Percent Shipping</title>
+									<sort_order>600</sort_order>
+									<children>
+										<amspercent_rules translate="title" module="amspercent">
+											<title>Manage Methods</title>
+											<action>amspercent/adminhtml_method</action>
+										</amspercent_rules>
+										<amspercent_rates translate="title" module="amspercent">
+											<title>Settings</title>
+											<action>adminhtml/system_config/edit/section/carriers</action>
+										</amspercent_rates>
+									</children>
+								</amspercent>
+							</children>
+                        </sales> 
+                     </children>
+                </admin> 
+			</resources>
+		</acl>
+        <translate>
+            <modules>
+                <Amasty_Spercent>
+                    <files>
+                        <default>Amasty_Spercent.csv</default>
+                    </files>
+                </Amasty_Spercent>
+            </modules>
+        </translate> 		
+</config> 

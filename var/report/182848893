@@ -1,0 +1,8 @@
+a:4:{i:0;s:52:"Module "Epicor_B2b" requires module "Epicor_Search".";i:1;s:730:"#0 D:\xampp\htdocs\magento\app\code\core\Mage\Core\Model\Config.php(849): Mage::throwException('Module "Epicor_...')
+#1 D:\xampp\htdocs\magento\app\code\core\Mage\Core\Model\Config.php(812): Mage_Core_Model_Config->_sortModuleDepends(Array)
+#2 D:\xampp\htdocs\magento\app\code\core\Mage\Core\Model\Config.php(315): Mage_Core_Model_Config->_loadDeclaredModules()
+#3 D:\xampp\htdocs\magento\app\code\core\Mage\Core\Model\App.php(425): Mage_Core_Model_Config->loadModules()
+#4 D:\xampp\htdocs\magento\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Model_App->_initModules()
+#5 D:\xampp\htdocs\magento\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 D:\xampp\htdocs\magento\index.php(83): Mage::run('', 'store')
+#7 {main}";s:3:"url";s:91:"/index.php/admin/system_config/edit/section/wordpress/key/50833959409e4409091ea5f102d172c8/";s:11:"script_name";s:10:"/index.php";}

@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!--
+* Copyright (c) 2017, SILK Software
+* All rights reserved.
+*
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions are met:
+* 1. Redistributions of source code must retain the above copyright
+*    notice, this list of conditions and the following disclaimer.
+* 2. Redistributions in binary form must reproduce the above copyright
+*    notice, this list of conditions and the following disclaimer in the
+*    documentation and/or other materials provided with the distribution.
+* 3. All advertising materials mentioning features or use of this software
+*    must display the following acknowledgement:
+*    This product includes software developed by the SILK Software.
+* 4. Neither the name of the SILK Software nor the
+*   names of its contributors may be used to endorse or promote products
+*    derived from this software without specific prior written permission.
+*
+* THIS SOFTWARE IS PROVIDED BY SILK Software ''AS IS'' AND ANY
+* EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+* WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+* DISCLAIMED. IN NO EVENT SHALL SILK Software BE LIABLE FOR ANY
+* DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+* (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+* LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+* ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+* (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+* SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<config>
+    <modules>
+        <Silk_Checkout>
+            <version>1.0.1</version>
+        </Silk_Checkout>
+    </modules>
+
+    <frontend>
+        <layout>
+            <updates>
+                <silk_checkout module="Silk_Checkout">
+                    <file>silk_checkout.xml</file>
+                </silk_checkout>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <blocks>
+            <silk_checkout>
+                <class>Silk_Checkout_Block</class>
+            </silk_checkout>
+        </blocks>
+        <helpers>
+            <silk_checkout>
+                <class>Silk_Checkout_Data</class>
+            </silk_checkout>
+        </helpers>
+        <resources>
+            <silk_checkout_setup>
+                <setup>
+                    <module>Silk_Checkout</module>
+                    <class>Mage_Sales_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </silk_checkout_setup>
+        </resources>
+        <fieldsets>
+            <sales_convert_quote>
+                <shipping_method>
+                    <to_order>*</to_order>
+                </shipping_method>
+            </sales_convert_quote>
+        </fieldsets>
+        <events>
+            <sales_order_save_after>
+                <observers>
+                  <silk_checkout>
+                      <class>Silk_Checkout_Model_Observer</class>
+                      <method>addAdditionalDataToComment</method>
+                  </silk_checkout>
+                </observers>
+            </sales_order_save_after>
+            <checkout_type_onepage_save_order>
+            <observers>
+                <silk_checkout>
+                    <type>model</type>
+                    <class>Silk_Checkout_Model_Observer</class>
+                    <method>checkoutTypeOnepageSaveOrder</method>
+                </silk_checkout>
+            </observers>
+        </checkout_type_onepage_save_order>
+        </events>
+    </global>
+</config>

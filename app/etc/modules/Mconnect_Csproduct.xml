@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--/**
+ * M-Connect Solutions.
+ * 
+ *
+ * NOTICE OF LICENSE
+ *
+ *
+ * It is also available through the world-wide-web at this URL:
+ * http://www.mconnectmedia.com/
+ *
+ * @category   M-Connect
+ * @package    M-Connect
+ * @copyright  Copyright (c) 2009-2010 M-Connect Solutions. (http://www.mconnectsolutions.com)
+ */-->
+<config>
+    <modules>
+        <Mconnect_Csproduct>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Mconnect_Csproduct>
+    </modules>
+</config> 
